@@ -1,0 +1,328 @@
+﻿<html>
+<head>
+<meta charset="utf-8">
+<title>G-Cal INTERNAL</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!--<link rel="stylesheet" href="style.css">
+	<script src="cal.js"></script>-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+	
+	
+	
+
+
+<style>
+﻿body, html {
+	background: #ECEDEF;
+	margin: 0;
+	padding: 0;
+}
+ 
+.container {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #fff;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.2);
+	border-radius: 14px;
+	padding-bottom: 20px;
+	width: 320px;
+	
+}
+.display {
+	width: 100%;
+	height: 100px;
+	padding: 60px 0;
+	background: #FF0509;
+	border-top-left-radius: 14px;
+	border-top-right-radius: 14px;
+}
+.buttons {
+	padding: 20px 0px 0 123px;
+}
+.row {
+	width: 280px;
+	float: left;
+}
+input[type=button] {
+	width: 60px;
+	height: 60px;
+	float: left;
+	padding: 0;
+	margin: 5px;
+	box-sizing: border-box;
+	background: #ecedef;
+	border: none;
+	font-size: 30px;
+	line-height: 30px;
+	border-radius: 50%;
+	font-weight: 700;
+	color: #5E5858;
+	cursor: pointer;
+	
+}
+input[type=text] {
+	width: 110px;
+	height: 60px;
+	float: left;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+	background: none;
+	color: #ffffff;
+	text-align: center;
+	font-weight: 70;
+	font-size: 40px;
+	line-height: 60px;
+	margin: 0 25px;
+	
+}
+
+
+
+
+.red {
+	background: #FF0509 !important;
+	color: #ffffff !important;
+	
+}
+h1{color: #ffffff;
+	text-align: center;
+	font-weight: 20;
+	font-size: 10px}
+
+
+h5{  /*G-CAL*/
+	font-size: 40px;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	letter-spacing: 1px;
+	color: #ffffff;
+	text-align: center;
+	/*background:#FF0509  !important;*/
+	color: #FF0509 !important;}
+
+h6{
+	/*RESULT*/
+	/*
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+	background: none;
+	font-weight: 70;
+	font-size: 40px;
+	line-height: 60px;
+	*/
+	font-size: 10px;
+	/*font-weight: bold;*/
+	/*font-family: “”, Georgia, Serif;*/
+	font-family: Arial, Helvetica, sans-serif;
+	letter-spacing: 1px;
+	color: #ffffff;
+	text-align: center;
+	/*width: 10px;
+	height: 90px;*/
+	/*margin: 0 25px;*/
+	/*width: 110px;
+	height: 150px;*/
+	/*float: center;*/
+}
+
+h4{
+	/*ONLY*/
+	/*
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+	background: none;
+	font-weight: 70;
+	font-size: 40px;
+	line-height: 60px;
+	*/
+	font-size: 10px;
+	/*font-weight: bold;*/
+	/*font-family: “”, Georgia, Serif;*/
+	font-family: Arial, Helvetica, sans-serif;
+	letter-spacing: 1px;
+	color: #FF0509 !important;
+	text-align: center;
+	/*width: 10px;
+	height: 90px;*/
+	/*margin: 0 25px;*/
+	/*width: 110px;
+	height: 150px;*/
+	/*float: center;*/
+}
+
+	/*output*/
+p {font-size: 20px;
+	font-weight: bold;
+	/*font-family: “”, Georgia, Serif;*/
+	font-family: Arial, Helvetica, sans-serif;
+	letter-spacing: 1px;
+	color: #ffffff;
+	text-align: center;}
+
+/*bitpaper-----discriptive*/
+.k {font-size: 10px;
+	font-weight:;
+	/*font-family: “”, Georgia, Serif;*/
+	font-family: Arial, Helvetica, sans-serif;
+	letter-spacing: 1px;
+	color: #ffffff;
+	text-align: center;}
+</style>
+</head>
+
+
+
+
+ 
+<body>
+
+
+	<div class="container">
+		<form name="form">
+		<div class="display">
+		
+			<div class="k">MID 1 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; MID 2</div><br/>
+			
+			<input type="text" class="b1" pattern="[0-30]*" inputmode="numeric"  id="txt1" name="text1" placeholder="/30" maxlength="2" required />
+			<input type="text" class="b2" pattern="[0-30]*" inputmode="numeric"  id="txt2" name="text2" placeholder="/30" maxlength="2" required />			
+			<br/>
+			<h6>RESULT</h6>
+			<p id="demo"></p>
+			
+		</div>
+			<div class="buttons">
+			  
+				
+				
+				<div class="row">
+				 
+				  <input type="button" class="red" value="=" onClick="myFunction()"> 
+				</div>
+
+				
+			</div>
+			<br>
+			<h5>G-Cal</h5>
+			<div class="">
+				<a href="index.html">
+				<h4>MID</h4></a>
+			</div>
+			<h4>Only for JNTU Aff College's</h4>
+		</form>
+	</div>
+	
+	<script>
+	
+
+
+
+	function myFunction() 
+				{
+  				var x = document.getElementById("txt1").value;
+  				var y = document.getElementById("txt2").value;
+  				if(x>=y)
+				{
+				 x=(x/100)*80;
+				 y=(y/100)*20;
+				}
+				else if (x<=y)
+				{
+				 x=(x/100)*20;
+				 y=(y/100)*80;
+				}
+  				var z = +x + +y;
+  			 // var r = Math.ceil(z);
+  				var r =Math.round(z);
+  				document.getElementById("demo").innerHTML = r;
+				}
+
+
+
+
+
+
+
+
+
+
+
+
+
+var g = false
+var j = false
+
+
+$('.b1').focus(function () {
+var $this = $(this)
+
+g = setInterval(
+
+function () {
+    if (($this.val() < 1 || $this.val() > 30) && $this.val().length != 0) {
+        if ($this.val() < 1) {
+            $this.val(1)
+        }
+
+        if ($this.val() > 30) {
+            $this.val(30)
+        }
+
+    }
+}, 50)
+})
+
+
+
+$('.b2').focus(function () {
+var $this = $(this)
+
+j = setInterval(
+
+function () {
+    if (($this.val() < 1 || $this.val() > 30) && $this.val().length != 0) {
+        if ($this.val() < 1) {
+            $this.val(1)
+        }
+
+        if ($this.val() > 30) {
+            $this.val(30)
+        }
+
+    }
+}, 50)
+})
+
+
+
+$('.').blur(function () {
+    if (g != false) {
+    window.clearInterval(t)
+    t = false;
+    }
+})
+
+
+$('.').blur(function () {
+    if (j != false) {
+    window.clearInterval(t)
+    t = false;
+    }
+})
+	</script>
+	
+	
+	
+	
+	
+	
+</body>
+	
+</html>
